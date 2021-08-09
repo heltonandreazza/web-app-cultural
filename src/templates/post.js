@@ -119,14 +119,6 @@ const Post = ({ data: { post, posts } = {}, path }) => {
         </div>
       </div>
       <Author author={post.author} />
-      <Disqus
-        className="container mx-auto px-6 lg:px-14 2xl:px-40"
-        config={{
-          url: `https://www.academia-cultural.com${path}`,
-          identifier: post.slug,
-          title: post.title,
-        }}
-      />
       <BlogCards title="Veja os conteúdos mais recentes">
         {posts.edges.map(({ node }) => (
           <BlogCardsItem
@@ -143,6 +135,14 @@ const Post = ({ data: { post, posts } = {}, path }) => {
           />
         ))}
       </BlogCards>
+      <Disqus
+        className="container mx-auto px-6 lg:px-14 2xl:px-40"
+        config={{
+          url: `https://www.academia-cultural.com${path}`,
+          identifier: post.slug,
+          title: post.title,
+        }}
+      />
       <Footer />
     </div>
   )
