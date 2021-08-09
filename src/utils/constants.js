@@ -35,4 +35,5 @@ export const CTA_WA_MESSAGES = {
     '14. Olá!! Estive no site e eu gostaria de agendar um atendimento personalizado. Poderia me ajudar??',
   footerCtaContact: '15. Olá!! Estive no site o link Atendimento, poderia me ajudar??',
   footerCtaJobs: '16. Olá!! Estive no site o link Trabalhe conosco, poderia me ajudar??',
+  pageNotFound: '17. Olá!! Estive no site, poderia me ajudar??',
 }

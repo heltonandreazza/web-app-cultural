@@ -12,6 +12,18 @@ const createPagePolicies = ({ graphql, actions: { createPage } }) => {
   })
 }
 
+const createPage404 = ({ graphql, actions: { createPage } }) => {
+  const pageNotFoundTemplate = path.resolve('src/templates/pageNotFound.js')
+
+  createPage({
+    path: '/404',
+    component: pageNotFoundTemplate,
+    context: {
+      slug: '/404',
+    },
+  })
+}
+
 const createPagePost = ({ graphql, actions: { createPage } }, response) => {
   const postTemplate = path.resolve('src/templates/post.js')
 
@@ -117,6 +129,7 @@ exports.createPages = async (props) => {
   `)
 
   createPagePolicies(props)
+  createPage404(props)
   createPageBlog(props, response)
   createPagePost(props, response)
   createPageCategories(props, response)

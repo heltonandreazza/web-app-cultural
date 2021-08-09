@@ -41,14 +41,14 @@ const Author = ({ author }) => (
         </div>
         <div className="relative mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:px-0 lg:max-w-none lg:py-20">
           {/* Testimonial card */}
-          <div className="relative pt-64 pb-10 rounded-2xl shadow-xl overflow-hidden">
+          <div className="relative rounded-2xl shadow-xl overflow-hidden">
             <GatsbyImage
               className="absolute inset-0 h-full w-full object-cover"
               image={author.image.gatsbyImageData}
             />
             <div className="absolute inset-0 bg-green-500 mix-blend-multiply opacity-20" />
             <div className="absolute inset-0 bg-gradient-to-t from-green-600 via-green-600 opacity-50" />
-            <div className="relative px-8">
+            <div className="absolute bottom-0 left-0 px-8 py-4">
               <blockquote className="mt-8">
                 <div className="relative text-lg font-medium text-white md:flex-grow">
                   <svg
@@ -64,8 +64,11 @@ const Author = ({ author }) => (
 
                 <footer className="mt-4">
                   <p className="text-base font-semibold text-green-200">
-                    {author.name},{author.role} na Academia Cultural
-                  </p>
+                    {author.name}
+                    ,{author.role}
+                    {' '}
+                    na Academia Cultural
+</p>
                 </footer>
               </blockquote>
             </div>
