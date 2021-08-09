@@ -40,7 +40,16 @@ const blogVideos = [
     imageProps: { src: video1, alt: 'video 1' },
     title: 'Rose Maria',
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.videosCta1),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.videosCta1)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.videosCta1,
+        })
+      }
+    },
     videoUrl: 'https://www.youtube.com/embed/tzs8s4uTNUg',
     description: `
     "Eu não tinha esperança nenhuma" - Rose Maria.
@@ -51,7 +60,16 @@ const blogVideos = [
     imageProps: { src: video2, alt: 'video 2' },
     title: 'Jeniffer Schmoegel',
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.videosCta2),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.videosCta2)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.videosCta2,
+        })
+      }
+    },
     videoUrl: 'https://www.youtube.com/embed/cFnwTgnmCjo',
     description: `Ela encontrou na Cultural um ambiente tão familiar que até trouxe sua avó Marlene para treinar junto!
       Jenifer sentia muita ansiedade, e em apenas 2 semanas já notou melhora na sua qualidade de vida, equilibrando a sua saúde física e mental.`,
@@ -60,7 +78,16 @@ const blogVideos = [
     imageProps: { src: video3, alt: 'video 3' },
     title: 'Heide Mohr',
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.videosCta3),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.videosCta3)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.videosCta3,
+        })
+      }
+    },
     videoUrl: 'https://www.youtube.com/embed/E-JerJAS5z4',
     description: `Conheça a Heide, aluna da Academia Cultural. Heide sentia dores na coluna, foi assim que ela procurou seu médico,
      onde o mesmo solicitou que ela optasse por CIRURGIA OU ACADEMIA. O que será que a Heide fez? Assista o vídeo.`,
@@ -77,7 +104,7 @@ const mainProjects = [
   alto gasto calórico que irão proporcionar excelentes resultados de perca de gordura
   trazendo mais qualidade de vida.`,
     ctaTitle: 'Comece Agora',
-    ctaHref: getWhatsUrl(CTA_WA_MESSAGES.greatPlansCta1),
+    ctaHref: CTA_WA_MESSAGES.greatPlansCta1,
     ctaTitle2: 'Treine em casa',
     ctaHref2: 'https://academia-cultural.kpages.online/resultadoja',
   },
@@ -88,7 +115,7 @@ const mainProjects = [
     description: `Projeto para reabilitação de patologias em geral como hérnias discais, inflamações
   articulares, pós cirúrgicos e lesões por movimentos repetitivos.`,
     ctaTitle: 'Comece Agora',
-    ctaHref: getWhatsUrl(CTA_WA_MESSAGES.greatPlansCta2),
+    ctaHref: CTA_WA_MESSAGES.greatPlansCta2,
   },
   {
     imageSrc: reabvidphoto,
@@ -98,7 +125,7 @@ const mainProjects = [
   contaminação do Covid 19, nesse projeto as fisioterapeutas fazem um tratamento ideal
   para recuperação cardiorrespiratória.`,
     ctaTitle: 'Comece Agora',
-    ctaHref: getWhatsUrl(CTA_WA_MESSAGES.greatPlansCta3),
+    ctaHref: CTA_WA_MESSAGES.greatPlansCta3,
   },
 ]
 
@@ -108,7 +135,16 @@ const projects = [
     paragraph: `Foi criado para pessoas que necessitam do aumento de massa muscular com objetivo
  de perca de flacidez e definição, além de ajudar no fortalecimento e perca de gordura localizada.`,
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.plansCta1),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta1)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta1,
+        })
+      }
+    },
     image: hipercphoto,
   },
   {
@@ -117,7 +153,16 @@ const projects = [
 irão proporcionar uma melhora de flexibilidade, fortalecimento muscular, reabilitação, postura 
 e estímulos para uma vida mais saudável.`,
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.plansCta2),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta2)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta2,
+        })
+      }
+    },
     image: studiopilatesphoto,
   },
   {
@@ -126,7 +171,16 @@ e estímulos para uma vida mais saudável.`,
 reabilitações, drenagens linfáticas, ventosa terapia, kinesio taping, auriculoterapia, eletro analgesia 
 terapia postural e massagens relaxantes.`,
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.plansCta3),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta3)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta3,
+        })
+      }
+    },
     image: fisioterapiaphoto,
   },
   {
@@ -134,7 +188,16 @@ terapia postural e massagens relaxantes.`,
     paragraph: `Se você procura um projeto para ter uma melhora em sua disposição no dia a dia,
 com exercícios super equilibrados onde vai deixar sua vida leve.`,
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.plansCta4),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta4)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta4,
+        })
+      }
+    },
     image: vivalevephoto,
   },
   {
@@ -142,7 +205,16 @@ com exercícios super equilibrados onde vai deixar sua vida leve.`,
     paragraph: `Se você gosta de caminhar, correr ou pedalar vai se impressionar com esse projeto
  para aumentar sua resistência e fortalecimento muscular.`,
     ctaTitle: 'Comece agora',
-    ctaOnClick: () => openWhatsUrl(CTA_WA_MESSAGES.plansCta5),
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta5)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta5,
+        })
+      }
+    },
     image: cardiospeedphoto,
   },
 ]
@@ -167,6 +239,15 @@ const CTAHeader = () => (
       target="_blank"
       className="flex flex-1 items-center justify-center font-regular text-lg text-white hover:text-gray-300"
       rel="noreferrer"
+      onClick={() => {
+        if (typeof window?.gtag !== 'undefined') {
+          window.gtag('event', 'conversion', {
+            send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+            event_callback: () => console.log('evento enviado'),
+            value: CTA_WA_MESSAGES.headerTopCta,
+          })
+        }
+      }}
     >
       <span className="mr-3">
         Clique aqui e nos contate via whatsapp para ter um atendimento diferenciado
@@ -292,7 +373,19 @@ const CTAImageContent = ({
           )}
         </div>
         <CTAICSContentDescriptionsParagraph>{description}</CTAICSContentDescriptionsParagraph>
-        <CTAICSContentDescriptionsCTA href={ctaHref} target="_blank">
+        <CTAICSContentDescriptionsCTA
+          href={getWhatsUrl(ctaHref)}
+          target="_blank"
+          onClick={() => {
+            if (typeof window?.gtag !== 'undefined') {
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+                event_callback: () => console.log('evento enviado'),
+                value: CTA_WA_MESSAGES.headerTopCta,
+              })
+            }
+          }}
+        >
           {ctaTitle}
         </CTAICSContentDescriptionsCTA>
         {ctaTitle2 && (
@@ -395,7 +488,18 @@ const CTABanner = () => (
         <span className="block text-green-500">Agende a sua experiência gratuita!</span>
       </h2>
       <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-        <Button onClick={() => openWhatsUrl(CTA_WA_MESSAGES.sectionCta)}>
+        <Button
+          onClick={() => {
+            openWhatsUrl(CTA_WA_MESSAGES.sectionCta)
+            if (typeof window?.gtag !== 'undefined') {
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+                event_callback: () => console.log('evento enviado'),
+                value: CTA_WA_MESSAGES.sectionCta,
+              })
+            }
+          }}
+        >
           Agende atendimento personalizado
         </Button>
       </div>
@@ -498,6 +602,7 @@ const Index = () => {
                       window.gtag('event', 'conversion', {
                         send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
                         event_callback: () => console.log('evento enviado'),
+                        value: CTA_WA_MESSAGES.heroCtaLifeProject,
                       })
                     }
                   }}
@@ -630,7 +735,6 @@ const Index = () => {
                 ctaOnClick={item.ctaOnClick}
                 description={item.description}
                 onClick={() => {
-                  console.log(showVideoModal, currentVideoUrlModal)
                   setShowVideoModal(true)
                   setCurrentVideoUrlModal(item.videoUrl)
                 }}

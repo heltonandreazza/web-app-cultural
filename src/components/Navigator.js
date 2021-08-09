@@ -49,6 +49,15 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
             target="_blank"
             className="font-medium text-green-500 hover:text-green-900"
             rel="noreferrer"
+            onClick={() => {
+              if (typeof window?.gtag !== 'undefined') {
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+                  event_callback: () => console.log('evento enviado'),
+                  value: CTA_WA_MESSAGES.headerCtaMenuItem2,
+                })
+              }
+            }}
           >
             Agende agora
           </a>
@@ -126,6 +135,15 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
             target="_blank"
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
             rel="noreferrer"
+            onClick={() => {
+              if (typeof window?.gtag !== 'undefined') {
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+                  event_callback: () => console.log('evento enviado'),
+                  value: CTA_WA_MESSAGES.headerCtaMenuItem2,
+                })
+              }
+            }}
           >
             Agende agora
           </a>
