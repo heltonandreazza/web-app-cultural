@@ -64,11 +64,8 @@ const Author = ({ author }) => (
 
                 <footer className="mt-4">
                   <p className="text-base font-semibold text-green-200">
-                    {author.name}
-                    ,{author.role}
-                    {' '}
-                    na Academia Cultural
-</p>
+                    {`${author.name}, ${author.role} na Academia Cultural`}
+                  </p>
                 </footer>
               </blockquote>
             </div>
@@ -117,9 +114,7 @@ const Author = ({ author }) => (
           </dl>
           <div className="mt-10">
             <a href="/authors" className="text-base font-medium text-green-600">
-              Conheça a nossa equipe 
-{' '}
-<span aria-hidden="true">&rarr;</span>
+              Conheça a nossa equipe <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
