@@ -14,21 +14,6 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     semi: ['error', 'never'],
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        printWidth: 100,
-        trailingComma: 'es5',
-        semi: false,
-      },
-    ],
-    'react/jsx-filename-extension': [
-      1,
-      {
-        extensions: ['.js', '.jsx'],
-      },
-    ],
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
@@ -46,6 +31,10 @@ module.exports = {
       },
     ],
     'object-curly-newline': 0,
+    'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
+    'import/prefer-default-export': 'off',
+    'jsx-quotes': ['error', 'prefer-single'],
+    'max-len': ['error', 150],
   },
   // Configuração para o Gatsby
   settings: {

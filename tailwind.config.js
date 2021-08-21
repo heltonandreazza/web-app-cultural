@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -7,5 +8,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }

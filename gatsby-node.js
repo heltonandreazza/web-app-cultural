@@ -1,29 +1,5 @@
 const path = require('path')
 
-const createPagePolicies = ({ graphql, actions: { createPage } }) => {
-  const policiesTemplate = path.resolve('src/templates/policies.js')
-
-  createPage({
-    path: '/politicas-de-privacidade',
-    component: policiesTemplate,
-    context: {
-      slug: '/politicas-de-privacidade',
-    },
-  })
-}
-
-const createPage404 = ({ graphql, actions: { createPage } }) => {
-  const pageNotFoundTemplate = path.resolve('src/templates/pageNotFound.js')
-
-  createPage({
-    path: '/404',
-    component: pageNotFoundTemplate,
-    context: {
-      slug: '/404',
-    },
-  })
-}
-
 const createPagePost = ({ graphql, actions: { createPage } }, response) => {
   const postTemplate = path.resolve('src/templates/post.js')
 
@@ -67,7 +43,7 @@ const createPageCategories = ({ graphql, actions: { createPage } }, response) =>
     // pagination
     const pageSizeCategory = 10
     const totalPostsCategory = response.data.posts.edges.filter(
-      filterByCategory(item.node.category)
+      filterByCategory(item.node.category),
     ).length
     const numPagesCategory = Math.ceil(totalPostsCategory / pageSizeCategory)
 
@@ -128,8 +104,6 @@ exports.createPages = async (props) => {
     }
   `)
 
-  createPagePolicies(props)
-  createPage404(props)
   createPageBlog(props, response)
   createPagePost(props, response)
   createPageCategories(props, response)

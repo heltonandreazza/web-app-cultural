@@ -1,3 +1,4 @@
+const path = require('path')
 const dotenv = require('dotenv')
 
 dotenv.config({
@@ -5,6 +6,26 @@ dotenv.config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: 'Academia Cultural',
+    name: 'Academia Cultural',
+    author: {
+      name: 'Helton Andreazza',
+      summary: 'Full stack developer.',
+    },
+    description: `Academia que oferece produtos e serviços para melhorar a sua saúde e qualidade de vida, 
+    criar projetos de vida para emagrecer, perda de peso, ganhar massa muscular, 
+    eliminar dores nas costas e no joelho, fazer musculaçao, pilates e fisioterapia`,
+    url: 'https://www.academia-cultural.com',
+    social: {
+      insta: '@academiacultural',
+      facebook: '@academiatimbo',
+      twitter: '@academiatimbo',
+    },
+    keywords: `saúde, fisioterapia, qualidade de vida, dor na coluna, dor no joelho, qualidade vida, 
+      exercício físico, academia cultural timbó, ortopedia, familia, pilates, academia, personal trainer, 
+      musculação, emagrecer, fibromialgia, idoso, vida saudavel, dor nas costas, projetos de vida, academia cultural`,
+  },
   plugins: [
     'gatsby-plugin-postcss',
     {
@@ -53,8 +74,13 @@ module.exports = {
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        host:
-          process.env.NODE_ENV === 'development' ? 'preview.contentful.com' : 'cdn.contentful.com',
+        host: process.env.NODE_ENV === 'development' ? 'preview.contentful.com' : 'cdn.contentful.com',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: path.join(__dirname, 'src', 'images'),
       },
     },
     'gatsby-plugin-image',
@@ -67,5 +93,12 @@ module.exports = {
         shortname: 'academia-cultural-1',
       },
     },
+    {
+      resolve: 'gatsby-source-instagram',
+      options: {
+        username: '4580283668',
+      },
+    },
+    'gatsby-plugin-react-helmet',
   ],
 }

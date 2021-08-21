@@ -8,19 +8,19 @@ import Navigator from '../components/BlogNavigator'
 import Seo from '../components/Seo'
 import '../styles/global.css'
 
-const Blog = ({ data, pageContext }) => {
+const Blog = ({ data, pageContext, location }) => {
   const [showMenuMobile, setShowMenuMobile] = useState(false)
   const pages = Array.from({ length: pageContext.numPages })
   return (
     <div>
-      <Seo title={`Blog Academia Cultural ${pageContext.title}`} />
+      <Seo title={`Blog Academia Cultural ${pageContext.title}`} type='blog' url={location?.href} />
       <Navigator
         onClickOpenMenuMobile={() => setShowMenuMobile(true)}
         onClickCloseMenuMobile={() => setShowMenuMobile(false)}
         showMenuMobile={showMenuMobile}
       />
       <main>
-        <BlogColunCards title={pageContext.title} description="Postagens mais recentes">
+        <BlogColunCards title={pageContext.title} description='Postagens mais recentes'>
           {data.posts.edges.slice(0, 3).map(({ node }) => (
             <BlogColunCardsItem
               title={node.title}
@@ -50,11 +50,7 @@ const Blog = ({ data, pageContext }) => {
             />
           ))}
         </BlogCards>
-        <BlogPagination
-          currentPage={pageContext.currentPage}
-          pagesLength={pages.length}
-          prefix={pageContext.slug}
-        />
+        <BlogPagination currentPage={pageContext.currentPage} pagesLength={pages.length} prefix={pageContext.slug} />
       </main>
       <Footer />
     </div>
