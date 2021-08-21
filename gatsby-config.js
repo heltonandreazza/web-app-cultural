@@ -25,6 +25,8 @@ module.exports = {
     keywords: `saúde, fisioterapia, qualidade de vida, dor na coluna, dor no joelho, qualidade vida, 
       exercício físico, academia cultural timbó, ortopedia, familia, pilates, academia, personal trainer, 
       musculação, emagrecer, fibromialgia, idoso, vida saudavel, dor nas costas, projetos de vida, academia cultural`,
+    image: 'static/logo-ce4d4439a60ae79615e6b37036ca20b7.png',
+    imageAlt: 'academia cultural',
   },
   plugins: [
     'gatsby-plugin-postcss',

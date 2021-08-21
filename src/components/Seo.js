@@ -15,6 +15,8 @@ const query = graphql`
           summary
         }
         defaultKeywords: keywords
+        defaultImage: image
+        defaultImageAlt: imageAlt
         social {
           facebook
           insta
@@ -23,7 +25,7 @@ const query = graphql`
       }
     }
     file(name: { eq: "logo" }) {
-      defaultImage: absolutePath
+      defaultImagePost: absolutePath
     }
   }
 `
@@ -31,16 +33,16 @@ const query = graphql`
 const SEO = ({ name, title, description, image, imageAlt = 'academia cultural', type = 'website', url, keywords = '' }) => {
   const { site, file } = useStaticQuery(query)
 
-  const { defaultName, defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultKeywords } = site.siteMetadata
-  const { defaultImage } = file
+  const { defaultName, defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultKeywords, defaultImage, defaultImageAlt } = site.siteMetadata
+  const { defaultImagePost } = file
 
   const seo = {
     title: title || defaultTitle,
     name: name || defaultName,
     description: description || defaultDescription,
-    image: image || defaultImage,
+    image: image || defaultImage || defaultImagePost,
     url: url || siteUrl,
-    imageAlt,
+    imageAlt: imageAlt || defaultImageAlt,
     keywords: keywords || defaultKeywords,
   }
 
@@ -55,7 +57,7 @@ const SEO = ({ name, title, description, image, imageAlt = 'academia cultural', 
       {seo.url && <meta property='og:url' content={seo.url} />}
       {seo.title && <meta property='og:title' content={seo.title} />}
       {seo.description && <meta property='og:description' content={seo.description} />}
-      {seo.image && <meta property='og:image' content={seo.image} />}
+      {seo.image && <meta property='og:image' content={`${seo.url}${seo.image}`} />}
       {seo.imageAlt && <meta property='og:image:alt' content={seo.imageAlt} />}
       <meta property='og:type' content={type} />
     </Helmet>
