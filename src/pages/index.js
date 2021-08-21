@@ -482,27 +482,29 @@ const POSTS_QUERY = graphql`
         }
       }
     }
-    instaPosts: allInstaNode(limit: 3) {
-      edges {
-        node {
-          caption
-          comments
-          id
-          likes
-          mediaType
-          timestamp
-          type
-          username
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
   }
 `
+
+// instaPosts: allInstaNode(limit: 3) {
+//   edges {
+//     node {
+//       caption
+//       comments
+//       id
+//       likes
+//       mediaType
+//       timestamp
+//       type
+//       username
+//       localFile {
+//         childImageSharp {
+//           gatsbyImageData
+//         }
+//       }
+//     }
+//   }
+// }
+
 const Index = ({ location }) => {
   const [showMenuMobile, setShowMenuMobile] = useState(false)
   const [showVideoModal, setShowVideoModal] = useState(false)
@@ -723,7 +725,7 @@ const Index = ({ location }) => {
           />
         ))}
       </BlogColunCards>
-      <InstaSection
+      {/* <InstaSection
         posts={data.instaPosts}
         people={[
           {
@@ -751,7 +753,7 @@ const Index = ({ location }) => {
             linkedinUrl: '#',
           },
         ]}
-      />
+      /> */}
       <Footer src={logo} />
     </div>
   )
