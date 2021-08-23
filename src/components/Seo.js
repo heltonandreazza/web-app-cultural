@@ -49,7 +49,7 @@ const SEO = ({ name, title, description, image, imageAlt = 'academia cultural', 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name='description' content={seo.description} />
-      <meta name='image' content={seo.image} />
+      <meta name='image' content={`${siteUrl}${seo.image}`} />
       <meta name='keywords' content={seo.keywords} />
 
       {/* facebook */}
@@ -57,7 +57,7 @@ const SEO = ({ name, title, description, image, imageAlt = 'academia cultural', 
       {seo.url && <meta property='og:url' content={seo.url} />}
       {seo.title && <meta property='og:title' content={seo.title} />}
       {seo.description && <meta property='og:description' content={seo.description} />}
-      {seo.image && <meta property='og:image' content={`${seo.url}${seo.image}`} />}
+      {seo.image && <meta property='og:image' content={`${siteUrl}${seo.image}`} />}
       {seo.imageAlt && <meta property='og:image:alt' content={seo.imageAlt} />}
       <meta property='og:type' content={type} />
     </Helmet>

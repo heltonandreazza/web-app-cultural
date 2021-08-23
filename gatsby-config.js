@@ -25,7 +25,7 @@ module.exports = {
     keywords: `saúde, fisioterapia, qualidade de vida, dor na coluna, dor no joelho, qualidade vida, 
       exercício físico, academia cultural timbó, ortopedia, familia, pilates, academia, personal trainer, 
       musculação, emagrecer, fibromialgia, idoso, vida saudavel, dor nas costas, projetos de vida, academia cultural`,
-    image: 'static/logo-ce4d4439a60ae79615e6b37036ca20b7.png',
+    image: '/static/logo-ce4d4439a60ae79615e6b37036ca20b7.png',
     imageAlt: 'academia cultural',
   },
   plugins: [
@@ -77,6 +77,7 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         host: process.env.NODE_ENV === 'development' ? 'preview.contentful.com' : 'cdn.contentful.com',
+        downloadLocal: true,
       },
     },
     {
@@ -86,7 +87,24 @@ module.exports = {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          formats: ['auto', 'webp'],
+          placeholder: 'tracedSVG',
+          quality: 50,
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: 'transparent',
+          tracedSVGOptions: {},
+          blurredOptions: {},
+          jpgOptions: {},
+          pngOptions: {},
+          webpOptions: {},
+          avifOptions: {},
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-remark',
     {

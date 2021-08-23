@@ -68,7 +68,7 @@ const Post = ({ data: { post, posts } = {}, path, location }) => {
         title={post?.title}
         description={post?.description}
         type='article'
-        // image={post?.featuredImage?.file?.url} todo: fix
+        image={post?.featuredImage?.localFile?.publicURL}
         imageAlt={post?.featuredImage?.title}
         url={location?.href}
         keywords={post?.keywords}
@@ -82,7 +82,11 @@ const Post = ({ data: { post, posts } = {}, path, location }) => {
         <AbsoluteBlock />
         <div className='container container mx-auto relative px-6 lg:px-64 2xl:px-80'>
           <figure className='mx-auto'>
-            <GatsbyImage className='h-80 w-full object-cover rounded-xl my-8' image={post.featuredImage.gatsbyImageData} />
+            <GatsbyImage
+              className='h-80 w-full object-cover rounded-xl my-8'
+              image={post.featuredImage?.localFile?.childImageSharp?.gatsbyImageData}
+              placeholder='blurred'
+            />
           </figure>
           <div className='text-lg'>
             <h1>
@@ -102,14 +106,14 @@ const Post = ({ data: { post, posts } = {}, path, location }) => {
       <BlogCards title='Veja os conteúdos mais recentes'>
         {posts.edges.map(({ node }) => (
           <BlogCardsItem
-            imageUrl={node.featuredImage.gatsbyImageData}
+            imageUrl={node.featuredImage?.localFile?.childImageSharp?.gatsbyImageData}
             title={node.title}
             datetime={node.createdAt}
             date={new Date(node.createdAt).toLocaleDateString()}
             description={node.description}
             href={`/blog${node.slug}`}
             authorName={node.author?.name}
-            authorImageUrl={node.author?.image.gatsbyImageData}
+            authorImageUrl={node.author?.image.localFile?.childImageSharp?.gatsbyImageData}
             authorHref={node.author?.urlInstagram}
             readingTime={node.readTime}
           />
@@ -144,7 +148,11 @@ export const pageQuery = graphql`
           }
         }
         image {
-          gatsbyImageData
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         createdAt
         name
@@ -157,10 +165,12 @@ export const pageQuery = graphql`
       }
       featuredImage {
         title
-        file {
-          url
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
         }
-        gatsbyImageData
       }
       contentRich {
         raw
@@ -176,7 +186,11 @@ export const pageQuery = graphql`
           createdAt
           updatedAt
           featuredImage {
-            gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           categories {
             category
@@ -186,7 +200,11 @@ export const pageQuery = graphql`
           author {
             name
             image {
-              gatsbyImageData
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             urlInstagram
           }

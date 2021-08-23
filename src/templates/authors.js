@@ -42,7 +42,7 @@ const Authors = ({
                 <li key={person.name} className='sm:py-8'>
                   <div className='space-y-4 sm:grid sm:grid-cols-3 sm:items-start sm:gap-6 sm:space-y-0'>
                     <div className='aspect-w-3 aspect-h-2 sm:aspect-w-3 sm:aspect-h-4'>
-                      <GatsbyImage className='object-cover shadow-lg rounded-lg' image={person.image.gatsbyImageData} />
+                      <GatsbyImage className='object-cover shadow-lg rounded-lg' image={person.image.localFile?.childImageSharp?.gatsbyImageData} />
                     </div>
                     <div className='sm:col-span-2'>
                       <div className='space-y-4'>
@@ -88,7 +88,11 @@ export const pageQuery = graphql`
       edges {
         node {
           image {
-            gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           name
           urlInstagram

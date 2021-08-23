@@ -331,7 +331,7 @@ const CTAImageContent = ({ imageSrc, imageAlt, imageTitle, label, description, c
           <img src={imageTitle} alt='plano' />
           {label && (
             <div className='flex items-center'>
-              <span className='p-4 text-base font-medium text-white bg-red-400 shadow-sm'>{label}</span>
+              <span className='p-1 sm:p-4 text-sm sm:tex-base font-medium text-white bg-red-400 shadow-sm'>{label}</span>
             </div>
           )}
         </div>
@@ -339,6 +339,7 @@ const CTAImageContent = ({ imageSrc, imageAlt, imageTitle, label, description, c
         <CTAICSContentDescriptionsCTA
           href={getWhatsUrl(ctaHref)}
           target='_blank'
+          rel='noreferrer'
           onClick={() => {
             if (typeof window?.gtag !== 'undefined') {
               window.gtag('event', 'conversion', {
@@ -352,7 +353,7 @@ const CTAImageContent = ({ imageSrc, imageAlt, imageTitle, label, description, c
           {ctaTitle}
         </CTAICSContentDescriptionsCTA>
         {ctaTitle2 && (
-          <CTAICSContentDescriptionsCTA href={ctaHref2} target='_blank'>
+          <CTAICSContentDescriptionsCTA href={ctaHref2} target='_blank' rel='noreferrer'>
             {ctaTitle2}
           </CTAICSContentDescriptionsCTA>
         )}
@@ -527,7 +528,7 @@ const Index = ({ location }) => {
       >
         {`Esse site utiliza cookies para te proporcionar uma melhor experiência. Ao continuar
         navegando, você aceita a nossa `}
-        <a className='text-bold underline' href='/politicas-de-privacidade' target='_blank'>
+        <a className='text-bold underline' href='/politicas-de-privacidade' target='_blank' rel='noreferrer'>
           política de privacidade
         </a>
       </CookieConsent>

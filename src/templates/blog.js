@@ -41,13 +41,13 @@ const Blog = ({ data, pageContext, location }) => {
           {data.posts.edges.slice(0, 3).map(({ node }) => (
             <BlogColunCardsItem
               title={node.title}
-              imageUrl={node.featuredImage.gatsbyImageData}
+              imageUrl={node.featuredImage.localFile?.childImageSharp?.gatsbyImageData}
               categoryName={node.categories?.map((c) => c.category).join('/')}
               categoryHref={`/blog${node.categories[0]?.slug}`}
               href={`/blog${node.slug}`}
               description={node.description}
               authorName={node.author?.name}
-              authorImageUrl={node.author?.image.gatsbyImageData}
+              authorImageUrl={node.author?.image.localFile?.childImageSharp?.gatsbyImageData}
               authorHref={node.author?.urlInstagram}
               datetime={node.createdAt}
               date={new Date(node.createdAt).toLocaleDateString()}
@@ -58,14 +58,14 @@ const Blog = ({ data, pageContext, location }) => {
         <BlogCards>
           {data.posts.edges.slice(3, 9).map(({ node }) => (
             <BlogCardsItem
-              imageUrl={node.featuredImage.gatsbyImageData}
+              imageUrl={node.featuredImage.localFile?.childImageSharp?.gatsbyImageData}
               title={node.title}
               datetime={node.createdAt}
               date={new Date(node.createdAt).toLocaleDateString()}
               description={node.description}
               href={`/blog${node.slug}`}
               authorName={node.author?.name}
-              authorImageUrl={node.author?.image.gatsbyImageData}
+              authorImageUrl={node.author?.image.localFile?.childImageSharp?.gatsbyImageData}
               authorHref={node.author?.urlInstagram}
               readingTime={node.readTime}
             />
@@ -89,7 +89,11 @@ export const pageQuery = graphql`
           createdAt
           updatedAt
           featuredImage {
-            gatsbyImageData
+            localFile {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
           }
           categories {
             category
@@ -99,7 +103,11 @@ export const pageQuery = graphql`
           author {
             name
             image {
-              gatsbyImageData
+              localFile {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
             urlInstagram
           }
