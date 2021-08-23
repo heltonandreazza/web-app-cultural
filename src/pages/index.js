@@ -41,7 +41,7 @@ const blogVideos = [
   {
     imageProps: { src: video1, alt: 'video 1' },
     title: 'Rose Maria',
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Quero uma reabilitação',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.videosCta1)
       if (typeof window?.gtag !== 'undefined') {
@@ -61,7 +61,7 @@ const blogVideos = [
   {
     imageProps: { src: video2, alt: 'video 2' },
     title: 'Jeniffer Schmoegel',
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Quero uma vida leve',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.videosCta2)
       if (typeof window?.gtag !== 'undefined') {
@@ -79,7 +79,7 @@ const blogVideos = [
   {
     imageProps: { src: video3, alt: 'video 3' },
     title: 'Heide Mohr',
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Quero pilates e fisioterapia',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.videosCta3)
       if (typeof window?.gtag !== 'undefined') {
@@ -105,7 +105,7 @@ const mainProjects = [
     description: `Programa especifico para perder peso e reduzir as suas medidas corporais através de exercícios de
   alto gasto calórico que irão proporcionar excelentes resultados para emagrecer, 
   trazendo mais qualidade de vida.`,
-    ctaTitle: 'Comece Agora',
+    ctaTitle: 'Comece a ter resultados',
     ctaHref: CTA_WA_MESSAGES.greatPlansCta1,
     ctaTitle2: 'Treine em casa',
     ctaHref2: 'https://academia-cultural.kpages.online/resultadoja',
@@ -118,7 +118,7 @@ const mainProjects = [
     description: `Nada melhor do que eliminar dores nas costas e no joelho. 
     Esse projeto foi feito para reabilitação de patologias em geral como hérnias discais, inflamações
     articulares, pós cirúrgicos e lesões por movimentos repetitivos.`,
-    ctaTitle: 'Comece Agora',
+    ctaTitle: 'Comece a sua reabilitação',
     ctaHref: CTA_WA_MESSAGES.greatPlansCta2,
   },
   {
@@ -128,7 +128,7 @@ const mainProjects = [
     description: `Mais novo programa para pessoas que ficaram com alguma anomalia em função da
   contaminação do Covid 19, nesse projeto as fisioterapeutas fazem um tratamento ideal
   para recuperação cardiorrespiratória.`,
-    ctaTitle: 'Comece Agora',
+    ctaTitle: 'Comece a cuidar da vida',
     ctaHref: CTA_WA_MESSAGES.greatPlansCta3,
   },
 ]
@@ -138,7 +138,7 @@ const projects = [
     titleImage: hiperclogo,
     paragraph: `Foi criado para pessoas que buscam musculação com objetivo
  de perder flacidez, ganhar massa muscular e definição, além de ajudar no fortalecimento e perda de gordura localizada.`,
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Comece musculação agora',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.plansCta1)
       if (typeof window?.gtag !== 'undefined') {
@@ -156,7 +156,7 @@ const projects = [
     paragraph: `No pilates, através de exercícios estimulados por aparelhos com tração nossas fisioterapeutas
 irão proporcionar uma melhora de flexibilidade, fortalecimento muscular, reabilitação, postura 
 e estímulos para uma vida mais saudável.`,
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Comece pilates agora',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.plansCta2)
       if (typeof window?.gtag !== 'undefined') {
@@ -174,7 +174,7 @@ e estímulos para uma vida mais saudável.`,
     paragraph: `Através da fisioterapia e com fisioterapeutas altamente qualificadas para tratamentos pós cirúrgicos,
 reabilitações, drenagens linfáticas, ventosa terapia, kinesio taping, auriculoterapia, eletro analgesia 
 terapia postural e massagens relaxantes.`,
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Comece fisioterapia agora',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.plansCta3)
       if (typeof window?.gtag !== 'undefined') {
@@ -191,7 +191,7 @@ terapia postural e massagens relaxantes.`,
     titleImage: vivalevelogo,
     paragraph: `Se você procura um projeto para ter uma melhora em sua disposição no dia a dia,
 com exercícios super equilibrados onde vai deixar sua vida leve, com saúde e qualidade.`,
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Comece viva leve agora',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.plansCta4)
       if (typeof window?.gtag !== 'undefined') {
@@ -208,7 +208,7 @@ com exercícios super equilibrados onde vai deixar sua vida leve, com saúde e q
     titleImage: cardiospeedlogo,
     paragraph: `Se você gosta de caminhar, correr ou pedalar vai se impressionar com esse projeto
  para aumentar sua resistência e fortalecimento muscular.`,
-    ctaTitle: 'Comece agora',
+    ctaTitle: 'Comece cardio speed agora',
     ctaOnClick: () => {
       openWhatsUrl(CTA_WA_MESSAGES.plansCta5)
       if (typeof window?.gtag !== 'undefined') {
@@ -448,7 +448,7 @@ const CTABanner = () => (
             }
           }}
         >
-          Agende atendimento personalizado
+          <h1>Agende a sua aula grátis</h1>
         </Button>
       </div>
     </div>
@@ -570,7 +570,7 @@ const Index = ({ location }) => {
                     }
                   }}
                 >
-                  Começar seu projeto
+                  Comece seu projeto de vida
                 </Button>
                 <Button onClick={() => window.open('https://academia-cultural.kpages.online/resultadoja')}>Exercite-se em casa</Button>
               </div>
