@@ -2,7 +2,7 @@ import React from 'react'
 import { getWhatsUrl } from '../utils'
 import { CTA_WA_MESSAGES, URLS } from '../utils/constants'
 
-const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobile, src }) => (
+const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobile, src, hrefInspiring, hrefHome}) => (
   <>
     <nav
       className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
@@ -10,7 +10,7 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
     >
       <div className="flex items-center flex-1">
         <div className="flex items-center justify-between w-full md:w-auto">
-          <a href="#">
+          <a href={hrefHome}>
             <span className="sr-only">Workflow</span>
             <img className="h-14 w-auto sm:h-20" src={src} alt="logo" />
           </a>
@@ -41,7 +41,7 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
           </div>
         </div>
         <div className="hidden md:block md:ml-10 md:space-x-10">
-          <a href="#inspiring-histories" className="font-bold text-green-500 hover:text-green-900">
+          <a href={hrefInspiring} className="font-bold text-green-500 hover:text-green-900">
             Projetos de vida!
           </a>
           <a
@@ -71,6 +71,9 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
           </a>
           <a href="/blog" className="font-medium text-green-500 hover:text-green-900">
             Blog
+          </a>
+          <a href="/links" className="font-medium text-green-500 hover:text-green-900">
+            Siga
           </a>
         </div>
       </div>
@@ -160,6 +163,12 @@ const Navigator = ({ showMenuMobile, onClickOpenMenuMobile, onClickCloseMenuMobi
             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
           >
             Blog
+          </a>
+          <a 
+            href="/links"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+          >
+            Siga
           </a>
         </div>
         <a

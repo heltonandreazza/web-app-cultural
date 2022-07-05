@@ -6,6 +6,7 @@ export const URLS = {
   youtube: 'https://www.youtube.com/channel/UCBRl2aeplT0kf9w0fH5BqYw',
   playstore: 'https://play.google.com/store/apps/details?id=com.academiacultural.culturalapp',
   appstore: 'https://apps.apple.com/us/app/id1504569755',
+  blog: 'https://www.academia-cultural.com/blog',
 }
 
 export const CTA_WA_MESSAGES = {

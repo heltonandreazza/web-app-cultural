@@ -543,6 +543,8 @@ const Index = ({ location }) => {
           onClickCloseMenuMobile={() => setShowMenuMobile(false)}
           showMenuMobile={showMenuMobile}
           src={logo}
+          hrefInspiring={'#inspiring-histories'}
+          hrefHome={'#'}
         />
 
         <Hero>
@@ -755,7 +757,12 @@ const Index = ({ location }) => {
           },
         ]}
       /> */}
-      <Footer src={logo} />
+      <Footer 
+        src={logo} 
+        mainProjects = '#main-projects'
+        moreProjects = '#more-projects'
+        sobre = '#'
+      />
     </div>
   )
 }

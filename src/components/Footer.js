@@ -2,7 +2,7 @@ import React from 'react'
 import { getWhatsUrl } from '../utils'
 import { CTA_WA_MESSAGES, URLS } from '../utils/constants'
 
-const Footer = ({ src }) => (
+const Footer = ({ src, mainProjects, moreProjects, sobre }) => (
   <footer className='bg-white' aria-labelledby='footerHeading'>
     <h2 id='footerHeading' className='sr-only'>
       Footer
@@ -49,13 +49,13 @@ const Footer = ({ src }) => (
               <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>Projetos</h3>
               <ul className='mt-4 space-y-4'>
                 <li>
-                  <a href='#main-projects' className='text-base text-gray-500 hover:text-gray-900'>
+                  <a href={mainProjects}className='text-base text-gray-500 hover:text-gray-900'>
                     Mais vendidos
                   </a>
                 </li>
 
                 <li>
-                  <a href='#more-projects' className='text-base text-gray-500 hover:text-gray-900'>
+                  <a href={moreProjects} className='text-base text-gray-500 hover:text-gray-900'>
                     Mais comentados
                   </a>
                 </li>
@@ -94,7 +94,7 @@ const Footer = ({ src }) => (
               <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>Empresa</h3>
               <ul className='mt-4 space-y-4'>
                 <li>
-                  <a href='#' className='text-base text-gray-500 hover:text-gray-900'>
+                  <a href={sobre} className='text-base text-gray-500 hover:text-gray-900'>
                     Sobre
                   </a>
                 </li>
