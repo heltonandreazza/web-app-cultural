@@ -1,9 +1,6 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const CardMidia = ({name, img, href}) => {
-
-  const image = getImage(img)
 
   return (
     
