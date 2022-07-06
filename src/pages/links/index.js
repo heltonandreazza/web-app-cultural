@@ -14,11 +14,11 @@ import CardMidia from '../../components/midia/CardMidia'
 
 import background from '../../images/background.webp'
 import logo from '../../images/logo.png'
-import Instagram from '../../images/midias/instagram.png'
-import Facebook from '../../images/midias/facebook.png'
-import Blog from '../../images/midias/blog.png'
-import Whatsapp from '../../images/midias/whatsapp.png'
-import Youtube from '../../images/midias/youtube.png'
+import Instagram from '../../images/instagram.png'
+import Facebook from '../../images/facebook.png'
+import Blog from '../../images/blog.png'
+import Whatsapp from '../../images/whatsapp.png'
+import Youtube from '../../images/youtube.png'
 
 const socialMidias = [
   {
@@ -74,94 +74,6 @@ const CTAHeader = () => (
   </nav>
 )
 
-// const CTAICSContent = ({ children, reverse }) => (
-//   <div
-//     className={`relative bg-green-400 ${reverse ? 'lg:col-start-1' : 'lg:col-start-3'
-//       } lg:row-start-1 lg:col-span-10  lg:grid lg:grid-cols-10 lg:items-center`}
-//   >
-//     {children}
-//   </div>
-// )
-// const CTAICSContentAbsSVG = ({ children }) => (
-//   <div className='hidden absolute inset-0 overflow-hidden lg:block' aria-hidden='true'>
-//     {children}
-//   </div>
-// )
-
-// const CTAICSContentDescriptions = ({ children, reverse }) => (
-//   <div
-//     className={`relative max-w-md mx-auto py-12 px-4 space-y-6 sm:max-w-3xl sm:py-16 sm:px-6 lg:max-w-none lg:p-0 ${reverse ? 'lg:col-start-2' : 'lg:col-start-4'
-//       } lg:col-span-6`}
-//   >
-//     {children}
-//   </div>
-// )
-
-// const CTAICSContentDescriptionsCTA = ({ children, ...otherProps }) => (
-//   <a
-//     className='block w-full py-3 pl-3 px-5 mr-4 text-center bg-white border border-transparent shadow-md text-base font-medium text-green-600 hover:bg-green-50 sm:inline-block sm:w-auto'
-//     {...otherProps}
-//   >
-//     {children}
-//   </a>
-// )
-
-// const CTAICSContentDescriptionsParagraph = ({ children }) => <p className='text-lg text-white'>{children}</p>
-
-// const CTAICSImage = ({ image, alt, reverse }) => (
-//   <div className={`relative ${reverse ? 'lg:col-start-9' : 'lg:col-start-1'} lg:row-start-1 lg:col-span-4 lg:bg-transparent z-10`}>
-//     <div className='max-w-md mx-auto sm:max-w-3xl sm:px-6 lg:max-w-none lg:p-0'>
-//       <div className='aspect-w-10 aspect-h-6 sm:aspect-w-2 sm:aspect-h-1 lg:aspect-w-1'>
-//         <img className='object-cover object-center shadow-2xl max-height-0' src={image} alt={alt} />
-//       </div>
-//     </div>
-//   </div>
-// )
-
-// const CTAImageContent = ({ imageSrc, imageAlt, imageTitle, label, description, ctaTitle, ctaHref, ctaTitle2, ctaHref2 }) => (
-//   <CTAImageContentSection>
-//     <CTAICSImage image={imageSrc} alt={imageAlt} />
-//     <CTAICSContent>
-//       <CTAICSContentAbsSVG>
-//         <BottomSquaresDots />
-//         <TopSquaresDots />
-//       </CTAICSContentAbsSVG>
-//       <CTAICSContentDescriptions>
-//         <div className='flex justify-between'>
-//           <img src={imageTitle} alt='plano' />
-//           {label && (
-//             <div className='flex items-center'>
-//               <span className='p-1 sm:p-4 text-sm sm:tex-base font-medium text-white bg-red-400 shadow-sm'>{label}</span>
-//             </div>
-//           )}
-//         </div>
-//         <CTAICSContentDescriptionsParagraph>{description}</CTAICSContentDescriptionsParagraph>
-//         <CTAICSContentDescriptionsCTA
-//           href={getWhatsUrl(ctaHref)}
-//           target='_blank'
-//           rel='noreferrer'
-//           onClick={() => {
-//             if (typeof window?.gtag !== 'undefined') {
-//               window.gtag('event', 'conversion', {
-//                 send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
-//                 event_callback: () => console.log('evento enviado'),
-//                 value: CTA_WA_MESSAGES.headerTopCta,
-//               })
-//             }
-//           }}
-//         >
-//           {ctaTitle}
-//         </CTAICSContentDescriptionsCTA>
-//         {ctaTitle2 && (
-//           <CTAICSContentDescriptionsCTA href={ctaHref2} target='_blank' rel='noreferrer'>
-//             {ctaTitle2}
-//           </CTAICSContentDescriptionsCTA>
-//         )}
-//       </CTAICSContentDescriptions>
-//     </CTAICSContent>
-//   </CTAImageContentSection>
-// )
-
 const ShowAllSocialMidia =() => ( 
   <div className='flex flex-row flex-wrap justify-around max-w-7xl items-center m-auto '>
     {
@@ -178,8 +90,6 @@ const ShowAllSocialMidia =() => (
     }
   </div>
 )
-
-// mt-1 block text-4xl tracking-tight font-extrabold sm:text-5xl xl:text-6xl'
 
 const MapLocation = () => ( 
   <div className='flex items-center justify-center mt-20 md:mt-40 md:mb-20 px-4'>
@@ -203,7 +113,7 @@ const HeroMidia = () => (
     </div>
 
     <div className='md:w-1/2 md:pt-12 relative'>
-      <StaticImage src='../../images/midias/social_media.png' />
+      <StaticImage src='../../images/social_media.png' />
     </div>
   </div>
 )
