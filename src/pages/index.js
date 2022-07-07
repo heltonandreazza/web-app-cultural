@@ -20,6 +20,8 @@ import resultadojalogo from '../images/resultadojalogo.png'
 import resultadojaphoto from '../images/resultadojaphoto.webp'
 import studiopilateslogo from '../images/studiopilateslogo.png'
 import studiopilatesphoto from '../images/studiopilatesphoto.webp'
+import modolipologo from '../images/modolipologo.png'
+import modolipophoto from '../images/modolipophoto.png'
 import video1 from '../images/video1.webp'
 import video2 from '../images/video2.webp'
 import video3 from '../images/video3.webp'
@@ -170,24 +172,6 @@ e estímulos para uma vida mais saudável.`,
     image: studiopilatesphoto,
   },
   {
-    titleImage: fisioterapialogo,
-    paragraph: `Através da fisioterapia e com fisioterapeutas altamente qualificadas para tratamentos pós cirúrgicos,
-reabilitações, drenagens linfáticas, ventosa terapia, kinesio taping, auriculoterapia, eletro analgesia 
-terapia postural e massagens relaxantes.`,
-    ctaTitle: 'Comece fisioterapia agora',
-    ctaOnClick: () => {
-      openWhatsUrl(CTA_WA_MESSAGES.plansCta3)
-      if (typeof window?.gtag !== 'undefined') {
-        window.gtag('event', 'conversion', {
-          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
-          event_callback: () => console.log('evento enviado'),
-          value: CTA_WA_MESSAGES.plansCta3,
-        })
-      }
-    },
-    image: fisioterapiaphoto,
-  },
-  {
     titleImage: vivalevelogo,
     paragraph: `Se você procura um projeto para ter uma melhora em sua disposição no dia a dia,
 com exercícios super equilibrados onde vai deixar sua vida leve, com saúde e qualidade.`,
@@ -220,6 +204,38 @@ com exercícios super equilibrados onde vai deixar sua vida leve, com saúde e q
       }
     },
     image: cardiospeedphoto,
+  },
+  {
+    titleImage: fisioterapialogo,
+    paragraph: `Nossas fisioterapeutas altamente qualificadas realizam tratamentos para alívio de dores crônicas, tratamento de lesões, tratamentos pré e pós-operatórios, terapias manuais como massagem relaxante, ventosaterapia e drenagem linfática. Além disso, realizam o tratamento para disfunções posturais para devolver a você uma melhor postura, assim prevenindo possíveis disfunções e lesões.`,
+    ctaTitle: 'Comece fisioterapia agora',
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta3)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta3,
+        })
+      }
+    },
+    image: fisioterapiaphoto,
+  },
+  {
+    titleImage: modolipologo,
+    paragraph: `Este projeto foi desenvolvido pensando muito em sua saúde, autoestima e bem estar.  Neste programa realizamos tratamentos dermatofuncionais que são procedimentos estéticos onde atuam na redução de gordura localizada, redução do aspecto da celulite, redução de flacidez e tonificação muscular. Neste projeto você passa por uma avaliação com nossas Fisioterapeutas onde serão coletados dados importantes como análise de exames de sangue, bioimpedância e medidas corporais, assim sendo prescrito o melhor tratamento pra você.`,
+    ctaTitle: 'Comece modolipo agora',
+    ctaOnClick: () => {
+      openWhatsUrl(CTA_WA_MESSAGES.plansCta6)
+      if (typeof window?.gtag !== 'undefined') {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-364234672/wCafCJ_ik-MCELCP160B',
+          event_callback: () => console.log('evento enviado'),
+          value: CTA_WA_MESSAGES.plansCta6,
+        })
+      }
+    },
+    image: modolipophoto,
   },
 ]
 
@@ -418,8 +434,8 @@ const CTAContentImage = ({ title, titleImage, paragraph, ctaTitle, ctaOnClick, i
     <div className='w-12/12 md:w-7/12'>
       <div>
         {title && <p className='text-xl font-semibold text-gray-900'>{title}</p>}
-        {titleImage && <img src={titleImage} alt='plano' />}
-        <p className='mt-3 text-gray-500'>{paragraph}</p>
+        {titleImage && <img src={titleImage} alt='plano' className="h-12" />}
+        <p className='mt-3 text-gray-500 text-justify'>{paragraph}</p>
       </div>
       <div className='mt-3'>
         <Button onClick={ctaOnClick}>{ctaTitle}</Button>

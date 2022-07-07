@@ -26,6 +26,7 @@ export const CTA_WA_MESSAGES = {
   plansCta3: '11. Olá!! Estive no site e curti muito o plano Fisioterapia. Poderia me ajudar??',
   plansCta4: '12. Olá!! Estive no site e curti muito o plano Viva Leve. Poderia me ajudar??',
   plansCta5: '13. Olá!! Estive no site e curti muito o plano Cardio Speed. Poderia me ajudar??',
+  plansCta6: '18. Olá!! Estive no site e curti muito o plano Modolipo. Poderia me ajudar??',
   sectionCta: '14. Olá!! Estive no site e eu gostaria de agendar um atendimento personalizado. Poderia me ajudar??',
   footerCtaContact: '15. Olá!! Estive no site o link Atendimento, poderia me ajudar??',
   footerCtaJobs: '16. Olá!! Estive no site o link Trabalhe conosco, poderia me ajudar??',
