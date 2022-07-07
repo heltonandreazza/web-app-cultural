@@ -1,22 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { StaticImage } from 'gatsby-plugin-image'
 import React, { useState } from 'react'
 import CookieConsent, { Cookies } from 'react-cookie-consent'
-import { StaticImage } from 'gatsby-plugin-image'
 
 import '../../styles/global.css'
 import { getWhatsUrl } from '../../utils'
 import { CTA_WA_MESSAGES, URLS } from '../../utils/constants'
 
 import Footer from '../../components/Footer'
+import CardMidia from '../../components/midia/CardMidia'
 import Navigator from '../../components/Navigator'
 import Seo from '../../components/Seo'
-import CardMidia from '../../components/midia/CardMidia'
 
 import background from '../../images/background.webp'
-import logo from '../../images/logo.png'
-import Instagram from '../../images/instagram.png'
-import Facebook from '../../images/facebook.png'
 import Blog from '../../images/blog.png'
+import Facebook from '../../images/facebook.png'
+import Instagram from '../../images/instagram.png'
+import logo from '../../images/logo.png'
 import Whatsapp from '../../images/whatsapp.png'
 import Youtube from '../../images/youtube.png'
 
@@ -37,7 +37,20 @@ const socialMidias = [
     img: Youtube,
   },
   {
-    name: 'Whatsapp',
+    hrefs: [
+      {
+        name: 'Barbara',
+        url: 'https://wa.me/5547997279233',
+      },
+      {
+        name: 'Carolina',
+        url: 'https://wa.me/5547992203282',
+      },
+      {
+        name: 'Mariana',
+        url: 'https://wa.me/5547992375753',
+      },
+    ],
     href: URLS.whatsapp,
     img: Whatsapp,
   },
@@ -45,8 +58,7 @@ const socialMidias = [
     name: 'Blog',
     href: URLS.blog,
     img: Blog,
-  }
-
+  },
 ]
 
 const CTAHeader = () => (
@@ -74,41 +86,33 @@ const CTAHeader = () => (
   </nav>
 )
 
-const ShowAllSocialMidia =() => ( 
+const ShowAllSocialMidia = () => (
   <div className='flex flex-row flex-wrap justify-around max-w-7xl items-center m-auto '>
-    {
-      socialMidias.map((midia) => {
-        return(
-          <CardMidia
-          name={midia.name}
-          img={midia.img}
-          href={midia.href}
-          key={midia.name}
-          />
-        )
-      })
-    }
+    {socialMidias.map((midia) => {
+      return <CardMidia name={midia.name} img={midia.img} href={midia.href} hrefs={midia.hrefs} key={midia.name} />
+    })}
   </div>
 )
 
-const MapLocation = () => ( 
+const MapLocation = () => (
   <div className='flex items-center justify-center mt-20 md:mt-40 md:mb-20 px-4'>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5810568273523!2d-49.277483684901476!3d-26.821465195864945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94defc07ba67c20f%3A0xddaf05c8ee94cd0!2sAcademia%20Cultural!5e0!3m2!1spt-BR!2sbr!4v1656974211452!5m2!1spt-BR!2sbr" 
-      width="1200" 
-      className='h-60 md:h-96' 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">  
-    </iframe>
+    <iframe
+      src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5810568273523!2d-49.277483684901476!3d-26.821465195864945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94defc07ba67c20f%3A0xddaf05c8ee94cd0!2sAcademia%20Cultural!5e0!3m2!1spt-BR!2sbr!4v1656974211452!5m2!1spt-BR!2sbr'
+      width='1200'
+      className='h-60 md:h-96'
+      allowfullscreen=''
+      loading='lazy'
+      referrerpolicy='no-referrer-when-downgrade'
+    ></iframe>
   </div>
 )
 
-const HeroMidia = () => ( 
+const HeroMidia = () => (
   <div className=' flex flex-col md:flex-row max-w-7xl md:items-center px-4 content-center mx-auto pt-16 md:pt-0'>
     <div className='md:w-1/2 '>
       <h2 className=' tracking-tight font-extrabold text-gray-900 text-4xl sm:text-5xl xl:text-6xl'>
-        Siga-nos nas <span className='text-green-600'>redes sociais </span>e fique por dentro de todas as <span className='text-green-600'>novidades</span>.
+        Siga-nos nas <span className='text-green-600'>redes sociais </span>e fique por dentro de todas as{' '}
+        <span className='text-green-600'>novidades</span>.
       </h2>
     </div>
 
@@ -158,20 +162,13 @@ const Index = ({ location }) => {
         />
         <HeroMidia />
       </div>
-      
+
       <ShowAllSocialMidia />
 
       <MapLocation />
 
-      <Footer 
-        src={logo} 
-        mainProjects = '../#main-projects'
-        moreProjects = '../#more-projects'
-        sobre = '../'
-      />
+      <Footer src={logo} mainProjects='../#main-projects' moreProjects='../#more-projects' sobre='../' />
     </div>
   )
 }
 export default Index
-
-
