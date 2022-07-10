@@ -22,21 +22,6 @@ import Youtube from '../../images/youtube.png'
 
 const socialMidias = [
   {
-    name: 'Facebook',
-    href: URLS.facebook,
-    img: Facebook,
-  },
-  {
-    name: 'Instagram',
-    href: URLS.instagram,
-    img: Instagram,
-  },
-  {
-    name: 'YouTube',
-    href: URLS.youtube,
-    img: Youtube,
-  },
-  {
     hrefs: [
       {
         name: 'Barbara',
@@ -53,6 +38,21 @@ const socialMidias = [
     ],
     href: URLS.whatsapp,
     img: Whatsapp,
+  },
+  {
+    name: 'Facebook',
+    href: URLS.facebook,
+    img: Facebook,
+  },
+  {
+    name: 'Instagram',
+    href: URLS.instagram,
+    img: Instagram,
+  },
+  {
+    name: 'YouTube',
+    href: URLS.youtube,
+    img: Youtube,
   },
   {
     name: 'Blog',
@@ -87,7 +87,7 @@ const CTAHeader = () => (
 )
 
 const ShowAllSocialMidia = () => (
-  <div className='flex flex-row flex-wrap justify-around max-w-7xl items-center m-auto '>
+  <div className='flex flex-row flex-wrap justify-around max-w-7xl items-center m-auto -mt-16 '>
     {socialMidias.map((midia) => {
       return <CardMidia name={midia.name} img={midia.img} href={midia.href} hrefs={midia.hrefs} key={midia.name} />
     })}
@@ -108,7 +108,7 @@ const MapLocation = () => (
 )
 
 const HeroMidia = () => (
-  <div className=' flex flex-col md:flex-row max-w-7xl md:items-center px-4 content-center mx-auto pt-16 md:pt-0'>
+  <div className=' flex flex-col md:flex-row max-w-7xl md:items-center px-4 content-center mx-auto mt-8 md:-mt-20'>
     <div className='md:w-1/2 '>
       <h2 className=' tracking-tight font-extrabold text-gray-900 text-4xl sm:text-5xl xl:text-6xl'>
         Siga-nos nas <span className='text-green-600'>redes sociais </span>e fique por dentro de todas as{' '}
@@ -116,8 +116,8 @@ const HeroMidia = () => (
       </h2>
     </div>
 
-    <div className='md:w-1/2 md:pt-12 relative'>
-      <StaticImage src='../../images/social_media.png' />
+    <div className='md:w-1/2 relative -mt-10 md:mt:0 md:-mr-20 '>
+      <StaticImage src='../../images/headersiga.png' />
     </div>
   </div>
 )
