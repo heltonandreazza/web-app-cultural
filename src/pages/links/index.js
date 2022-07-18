@@ -22,6 +22,7 @@ import Youtube from '../../images/youtube.png'
 
 const socialMidias = [
   {
+    description: 'Fale com as nossas consultoras:',
     hrefs: [
       {
         name: 'Barbara',
@@ -89,7 +90,7 @@ const CTAHeader = () => (
 const ShowAllSocialMidia = () => (
   <div className='flex flex-row flex-wrap justify-around max-w-7xl items-center m-auto -mt-16 '>
     {socialMidias.map((midia) => {
-      return <CardMidia name={midia.name} img={midia.img} href={midia.href} hrefs={midia.hrefs} key={midia.name} />
+      return <CardMidia name={midia.name} img={midia.img} href={midia.href} hrefs={midia.hrefs} key={midia.name} description={midia.description} />
     })}
   </div>
 )
